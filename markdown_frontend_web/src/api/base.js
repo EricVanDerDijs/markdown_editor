@@ -1,5 +1,12 @@
+import qs from 'query-string'
+
 export const baseFetch = async (endpoint, options) => {
   let url = `http://localhost:1337${endpoint}`
+
+  if (options && options.queryString !== undefined) {
+    url += `?${qs.stringify(options.queryString)}`
+    delete options.queryString
+  }
 
   const finalOptions = {
     headers: {

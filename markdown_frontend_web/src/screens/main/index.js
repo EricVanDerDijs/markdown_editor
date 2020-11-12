@@ -8,6 +8,7 @@ export const MainScreen = () => {
   const {
     documents,
     selectedDocument,
+    setDocumentsList,
     updateDocument,
     setSelectedDocumentId,
     deleteDocumentById,
@@ -21,6 +22,7 @@ export const MainScreen = () => {
           selectedDocumentId={selectedDocument._id}
           onDocumentSelected={setSelectedDocumentId}
           onDeleteDocument={deleteDocumentById}
+          onDocumentsFetched={setDocumentsList}
           />
         <MarkdownEditor
           currentDocument={selectedDocument}

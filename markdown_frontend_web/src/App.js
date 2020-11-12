@@ -2,11 +2,11 @@ import { LoginRegisterScreen } from './screens/login_register'
 import { MainScreen } from './screens/main'
 
 export const App = () => {
-  const email = localStorage.getItem('email')
+  const user_id = localStorage.getItem('user_id')
 
   return (
     <>
-      {email ?
+      {user_id ?
         <MainScreen />
         :
         <LoginRegisterScreen />

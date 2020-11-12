@@ -23,8 +23,8 @@ export const RegisterForm = () => {
           body,
         }
       )
-      const { user: { email } } = response
-      localStorage.setItem('email', email)
+      const { user: { _id } } = response
+      localStorage.setItem('user_id', _id)
       window.location.reload()
     } catch ({ error, ...rest }) {
       if (error) setError(error)

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Typography, Paper, IconButton } from '@material-ui/core'
 import FileIcon from '@material-ui/icons/Description'
-import DeleteIcon from '@material-ui/icons/Delete'
+import NotSavedIcon from '@material-ui/icons/CloudOff'
 import { useStyles } from './styles'
 
 export const DocListItem = memo(({
@@ -9,7 +9,6 @@ export const DocListItem = memo(({
   newDocumentItem,
   document,
   onItemClicked,
-  onDeleteDocument = () => {},
 }) => {
   const { root, icon, infoContainer } = useStyles({ isSelected })
 
@@ -28,14 +27,9 @@ export const DocListItem = memo(({
           </Typography>
         }
       </div>
-      {!newDocumentItem &&
-          <IconButton onClick={event => {
-            event.stopPropagation()
-            onDeleteDocument()
-          }}>
-            <DeleteIcon color='action'/>
-          </IconButton>
-        }
+      {!document.savedToDb &&
+        <NotSavedIcon color='action'/>
+      }
     </Paper>
   )
 })

@@ -8,6 +8,7 @@ export const useStyles = makeStyles(theme=> ({
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
+    width: 'calc(100% - 10px)',
     background: props => props.isSelected ? theme.palette.primary.light :  'white'
   },
   icon: {

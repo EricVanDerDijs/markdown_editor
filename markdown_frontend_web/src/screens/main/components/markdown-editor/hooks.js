@@ -32,7 +32,7 @@ const useDocumentContent = (currentDocument, onDocumentChange) => {
   const { parsedContent } = useParsedContent(content, MD.render.bind(MD))
 
   const onContentChange = event => {
-    const updatedDoc = { ...currentDocument, content: event.target.value }
+    const updatedDoc = { ...currentDocument, content: event.target.value, savedToDb: false }
     onDocumentChange(updatedDoc)
   }
 
