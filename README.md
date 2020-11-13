@@ -36,4 +36,7 @@
 8. Navega a **http://localhost:3000/**
 9. Podrás encontrar el administrador de backend en **http://localhost:1337/admin/**
 
+Video de la aplicación corriendo (disculpen la calidad de la grabación):  
+[VIDEO](https://drive.google.com/file/d/1sxsuyKTLuj49QrgiL1cd84vrJnCLX2sR/view?usp=sharing)
+
 Espero les guste!
