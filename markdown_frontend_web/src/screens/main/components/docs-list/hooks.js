@@ -14,7 +14,7 @@ const useDocumentsList = (onDocumentsFetched, onLoading) => {
     try {
       const result = await baseFetch('/documents', { queryString: { author: user_id } })
       const newDocumentsDict = {}
-      newDocumentsDict[NEW_DOCUMENT._id] = NEW_DOCUMENT
+      newDocumentsDict[NEW_DOCUMENT._id] = { ...NEW_DOCUMENT }
       if (result instanceof Array) {
         result.forEach(document => {
           document.savedToDb = true

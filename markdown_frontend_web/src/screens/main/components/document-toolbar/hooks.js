@@ -7,7 +7,7 @@ const useDocumentToolbar = (currentDocument, onDocumentUpdated, onDocumentCreate
   const [error, setError] = useState('')
 
   const updateTitle = e => {
-    const updatedDocument = { ...currentDocument, title: e.target.value }
+    const updatedDocument = { ...currentDocument, title: e.target.value, savedToDb: false  }
     onDocumentUpdated(updatedDocument)
   }
 

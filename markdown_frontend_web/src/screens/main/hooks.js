@@ -18,7 +18,7 @@ const getSelectedDocument = (documentsDict, selectedDocumentId) => {
   if (result)
     return result
   else
-    return NEW_DOCUMENT
+    return { ...NEW_DOCUMENT }
 }
 
 const useDocumentsList = () => {
@@ -36,6 +36,8 @@ const useDocumentsList = () => {
   }
   
   const createAndSelectDocument = updatedDocument => {
+    delete documents[NEW_DOCUMENT._id]
+    documents[NEW_DOCUMENT._id] = { ...NEW_DOCUMENT }
     updateDocument(updatedDocument)
     setSelectedDocumentId(updatedDocument._id)
   }
@@ -43,6 +45,7 @@ const useDocumentsList = () => {
   const deleteDocumentById = document_id => {
     delete documents[document_id]
     setDocumentsList({ ...documents })
+    setSelectedDocumentId(NEW_DOCUMENT._id)
   }
 
   return {
