@@ -40,7 +40,7 @@ export const LoginForm = () => {
         <form className={root}>
           <TextField label="Username / Email" onChange={(e) => setIdentifier(e.target.value)} value={identifier} className={input} />
           <TextField label="Password" type='password' onChange={(e) => setPassword(e.target.value)} value={password} className={input}/>
-          <Button onClick={() => registerUser()} variant='contained'>
+          <Button onClick={() => registerUser()} variant='contained' color='primary'>
             Submit!
           </Button>
         </form>

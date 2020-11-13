@@ -1,8 +1,9 @@
 import { memo } from 'react'
-import { Typography, Paper, IconButton } from '@material-ui/core'
+import { Typography, Paper } from '@material-ui/core'
 import FileIcon from '@material-ui/icons/Description'
 import NotSavedIcon from '@material-ui/icons/CloudOff'
 import { useStyles } from './styles'
+import { NEW_DOCUMENT } from '../../hooks'
 
 export const DocListItem = memo(({
   isSelected,
@@ -22,14 +23,16 @@ export const DocListItem = memo(({
           {document.title}
         </Typography>
         {!newDocumentItem &&
-          <Typography variant='caption'>
-            {document.updated_at}
+          <Typography variant='overline'>
+            {document.updatedAt}
           </Typography>
         }
       </div>
-      {!document.savedToDb &&
+      {!document.savedToDb && document._id !== NEW_DOCUMENT._id &&
         <NotSavedIcon color='action'/>
       }
     </Paper>
   )
 })
+
+DocListItem.displayName = 'DocListItem'

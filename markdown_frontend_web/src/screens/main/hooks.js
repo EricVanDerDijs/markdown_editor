@@ -7,7 +7,7 @@ const NEW_DOCUMENT = {
   author_name: 'none',
   content: '# New Blank Document',
   updated_at: '2012-10-15T21:26:17Z',
-  savedToDb: true,
+  savedToDb: false,
 }
 
 const getSelectedDocument = (documentsDict, selectedDocumentId) => {
@@ -24,6 +24,7 @@ const getSelectedDocument = (documentsDict, selectedDocumentId) => {
 const useDocumentsList = () => {
   const [documents, setDocumentsList] = useState({})
   const [selectedDocumentId, setSelectedDocumentId] = useState('')
+  const [isLoading, setLoading] = useState(false)
   const selectedDocument = getSelectedDocument(documents, selectedDocumentId)
   
   const updateDocument = updatedDocument => {
@@ -34,6 +35,11 @@ const useDocumentsList = () => {
     setDocumentsList(newDocumentsDict)
   }
   
+  const createAndSelectDocument = updatedDocument => {
+    updateDocument(updatedDocument)
+    setSelectedDocumentId(updatedDocument._id)
+  }
+
   const deleteDocumentById = document_id => {
     delete documents[document_id]
     setDocumentsList({ ...documents })
@@ -42,10 +48,13 @@ const useDocumentsList = () => {
   return {
     documents,
     selectedDocument,
+    isLoading,
     setDocumentsList,
     updateDocument,
     setSelectedDocumentId,
+    createAndSelectDocument,
     deleteDocumentById,
+    setLoading,
   }
 }
 

@@ -42,7 +42,7 @@ export const RegisterForm = () => {
           <TextField label="Username" onChange={(e) => setUsername(e.target.value)} value={username} className={input} />
           <TextField label="Email" onChange={(e) => setEmail(e.target.value)} value={email} className={input}/>
           <TextField label="Password" type='password' onChange={(e) => setPassword(e.target.value)} value={password} className={input}/>
-          <Button onClick={() => registerUser()} variant='contained'>
+          <Button onClick={() => registerUser()} variant='contained' color='primary'>
             Submit!
           </Button>
         </form>

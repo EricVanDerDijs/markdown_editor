@@ -5,7 +5,11 @@ import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import reportWebVitals from './reportWebVitals';
 
-const defaultTheme = createMuiTheme();
+const defaultTheme = createMuiTheme({
+  typography: {
+    htmlFontSize: 19,
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>

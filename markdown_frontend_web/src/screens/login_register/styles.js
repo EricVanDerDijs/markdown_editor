@@ -4,9 +4,16 @@ export const useStyles = makeStyles(theme => ({
   root: {
     height: '100vh',
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     background: theme.palette.primary.main,
+  },
+  title: {
+    fontSize: 32,
+    marginBottom: 15,
+    color: 'white',
+    fontWeight: 'bold',
   },
   paperStyles: {
     maxWidth: 600,
